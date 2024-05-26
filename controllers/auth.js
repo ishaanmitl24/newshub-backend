@@ -59,7 +59,14 @@ exports.postLogin = (req, res, next) => {
         "somesupersecretkeymadebyadmin",
         { expiresIn: "1h" }
       );
-      res.status(201).json({token:token,userId:loadeduser._id.toString()});
+      res
+        .status(201)
+        .json({
+          token: token,
+          userId: loadeduser._id.toString(),
+          name: loadeduser.name,
+          message:'User Logged in successfully!'
+        });
     })
     .catch((err) => {
       if (!err.statusCode) {

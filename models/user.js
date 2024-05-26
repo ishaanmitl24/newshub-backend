@@ -5,7 +5,7 @@ class User {
   constructor(email, password, name, status, post) {
     this.email = email;
     this.password = password;
-    this.nam = name;
+    this.name = name;
     this.status = status ? status : null;
     this.post = [];
   }
